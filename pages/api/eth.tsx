@@ -18,9 +18,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const svg = await satori(
       <div
         style={{
-          justifyContent: "flex-start",
-          alignItems: "center",
           display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
           width: "100%",
           height: "100%",
           backgroundColor: "#f1f1f1",
@@ -37,17 +38,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             width: "100%",
             padding: 20,
           }}>
-          <h2 style={{ textAlign: "center", color: "black", fontSize: "30" }}>$ETH Price</h2>
+          <h2 style={{ textAlign: "center", color: "black", fontSize: "40" }}>$ETH Price</h2>
           <div
             style={{
               color: "#000",
               padding: 10,
               marginBottom: 10,
               borderRadius: 4,
-              fontSize: "80",
-              width: `100%`,
+              fontSize: "90",
+              width: "100%",
               whiteSpace: "nowrap",
               display: "flex",
+              justifyContent: "center",
               overflow: "visible",
             }}>
             ${data.USD}
