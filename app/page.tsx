@@ -7,6 +7,9 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "ETH Price",
       images: [`/api/eth`],
     },
+    other: {
+      "fc:frame:button:1": "test",
+    },
     metadataBase: new URL(process.env["HOST"] || ""),
   };
 }
