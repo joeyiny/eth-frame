@@ -4,8 +4,8 @@ import { getFrameMetadata } from "@coinbase/onchainkit";
 // Step 2. Use generateFrameNextMetadata to shape your Frame metadata
 const frameMetadata = getFrameMetadata({
   buttons: ["test"],
-  image: "/api/eth",
-  post_url: "/api/eth",
+  image: `${process.env["HOST"]}/api/eth`,
+  post_url: `${process.env["HOST"]}/api/eth`,
 });
 
 export async function generateMetadata(): Promise<Metadata> {
