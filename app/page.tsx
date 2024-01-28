@@ -1,4 +1,12 @@
 import { Metadata, ResolvingMetadata } from "next";
+import { getFrameMetadata } from "@coinbase/onchainkit";
+
+// Step 2. Use generateFrameNextMetadata to shape your Frame metadata
+const frameMetadata = getFrameMetadata({
+  buttons: ["test"],
+  image: "/api/eth",
+  post_url: "/api/eth",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -8,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [`/api/eth`],
     },
     other: {
-      "fc:frame:button:1": "test",
+      ...frameMetadata,
     },
     metadataBase: new URL(process.env["HOST"] || ""),
   };
